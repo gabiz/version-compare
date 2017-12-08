@@ -35,7 +35,7 @@ function validateVersionFormat(version) {
   if (typeof(version) !== "string") {
     throw new TypeError(`Expected string, got ${typeof version} (${version})`);
   }
-  const VERS_REGEX = /^(\d+\.)?(\d+\.)+(\*|\d+)$|^(\d+)$/;
+  const VERS_REGEX = /^\d+(\.\d+)*$/;
   if (!VERS_REGEX.test(version)) {
     throw new TypeError(`Expected version format, got ${version}`);
   }

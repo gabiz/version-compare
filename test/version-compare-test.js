@@ -12,6 +12,7 @@ describe('versionCompare()', () => {
     assert.throws(() => versionCompare("1.0.", "1.0.0"), TypeError, "Expected version format, got 1.0.");
     assert.throws(() => versionCompare("1.O.O", "1.0.0"), TypeError, "Expected version format, got 1.O.O");
     assert.throws(() => versionCompare("", "1.0.0"), TypeError, "Expected version format, got ");
+    assert.throws(() => versionCompare("1.0beta", "1.0.0"), TypeError, "Expected version format, got ");
   });
 
   it('should return 0 when the versions are identical', () => {
