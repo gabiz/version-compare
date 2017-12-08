@@ -15,24 +15,21 @@ let compareVersion = (version1, version2) => {
     return 0;
   }
 
-  return compareVersionAry(version1.split("."), version2.split("."));
-};
+  let [verAry1, verAry2] = [version1, version2].map((v) => v.split("."))
+  let size = Math.max(verAry1.length, verAry2.length)
 
-function compareVersionAry(versionAry1, versionAry2) {
-  if (versionAry1.length == 0 && versionAry2.length == 0) { return 0 }
-
-  let entryInt1 = parseInt(versionAry1[0]) || 0;
-  let entryInt2 = parseInt(versionAry2[0]) || 0;
-
-  if (entryInt1 > entryInt2) {
-    return 1;
-  } else if (entryInt2 > entryInt1) {
-    return -1;
-  } else {
-    // tail recursion
-    return compareVersionAry(versionAry1.slice(1), versionAry2.slice(1));
+  for (let index = 0; index < size; index++) {
+      let entry1 = parseInt(verAry1[index]) || 0;
+      let entry2 = parseInt(verAry2[index]) || 0;
+      // bail as soon as we have a result
+      if (entry1 > entry2) {
+        return 1;
+      } else if (entry2 > entry1){
+        return -1;
+      }
   }
-}
+  return 0;
+};
 
 function validateVersionFormat(version) {
   if (typeof(version) !== "string") {

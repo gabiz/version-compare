@@ -50,7 +50,7 @@ describe('versionCompare()', () => {
                           "1.2.3.4.5.6.777.8.9.10.11.12.100.101.102.1000.1001.1002"), -1);
   });
 
-  it('should support required used cases', () => {
+  it('should support required use cases', () => {
     assert.equal(versionCompare("1", "2"), -1);
     assert.equal(versionCompare("1.1", "1.1.2"), -1);
     assert.equal(versionCompare("1.0.0.0", "1.0"), 0);
