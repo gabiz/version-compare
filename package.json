@@ -1,0 +1,17 @@
+{
+  "name": "version-compare",
+  "version": "1.0.0",
+  "description": "Compares version numbers",
+  "main": "version-compare.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "version"
+  ],
+  "author": "Gabi Zuniga",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
